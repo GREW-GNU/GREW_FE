@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:grew/core/router/app_router.dart';
 import 'package:grew/core/theme/colors.dart';
 import 'package:grew/core/theme/spacing.dart';
 import 'package:grew/core/theme/strings.dart';
 import 'package:grew/presentation/widgets/button/arrow_button.dart';
+import 'package:grew/presentation/widgets/button/link_text_button.dart';
+import 'package:grew/presentation/widgets/button/svg_icon_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,48 +38,48 @@ class HomePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: Row(
                                 children: [
-                                  Text(
-                                    "서그루",
-                                    style: TextStyle(
-                                      color: AppColors.white,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w600,
-                                      decoration: TextDecoration.underline,
-                                      decorationThickness: 2,
-                                      decorationColor: AppColors.white,
-                                      fontFamily: "AppleSDGothicNeo",
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
+                                  // Home Header 사용자 닉네임 표기 및 환영 문구
+                                  LinkTextButton(
+                                    text: "서그루",
+                                    color: AppColors.white,
+                                    fontSize: 20.0,
+                                    weight: FontWeight.w600,
+                                    underline: true,
+                                    underlineThickness: 1.0,
+                                    onPressed: () {
+                                      context.go(AppRoutes.my);
+                                    },
                                   ),
                                   Text(
                                     "님 반갑습니다.",
                                     style: TextStyle(
                                       color: AppColors.white,
-                                      fontSize: 16.0,
+                                      fontSize: 20.0,
                                       fontWeight: FontWeight.w600,
-                                      fontFamily: "AppleSDGothicNeo",
+                                      fontFamily: "Pretendard",
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 8),
-                            SvgPicture.asset(
-                              'lib/core/assets/icons/bell_icon.svg',
-                              width: 24,
-                              height: 24,
-                              colorFilter: const ColorFilter.mode(
-                                AppColors.white,
-                                BlendMode.srcIn,
-                              ),
+                            const SizedBox(width: 16),
+                            // 알림 icon 버튼
+                            SvgIconButton(
+                              icon: 'lib/core/assets/icons/bell_icon.svg',
+                              size: 32,
+                              color: AppColors.white,
+                              onPressed: () {
+                                context.go(AppRoutes.my);
+                              },
                             ),
                           ],
                         ),
                         const SizedBox(height: 16),
+                        // CREW 목록 이동 버튼
                         ArrowButton(
                           title: AppStrings.grewEntryPointTitle,
                           subTitle: AppStrings.grewEntryPointSubTitle,

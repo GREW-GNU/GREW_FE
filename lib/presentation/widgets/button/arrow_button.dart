@@ -69,22 +69,24 @@ class ArrowButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Title
                   Text(
                     title,
                     style: TextStyle(
                       color: titleFontColor,
                       fontSize: 20,
-                      fontFamily: "AppleSDGothicNeo",
-                      fontWeight: FontWeight.w700,
+                      fontFamily: "Pretendard",
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   const SizedBox(height: 8),
+                  // Sub Title
                   Text(
                     subTitle,
                     style: TextStyle(
                       color: subTitleFontColor,
                       fontSize: 12,
-                      fontFamily: "AppleSDGothicNeo",
+                      fontFamily: "Pretendard",
                       fontWeight: FontWeight.w400,
                     ),
                   ),

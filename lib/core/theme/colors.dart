@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 abstract final class AppColors {
   static const backgroundBlack = Color(0xFF0A090E);
-  static const boxGray = Color(0xFF1A191E);
   static const popupGray = Color(0xFF2B2A2F);
+  static const boxGray = Color(0xFFF3F3F3);
 
   static const gray80 = Color(0xFF3F3F3F);
   static const gray60 = Color(0xFF676767);

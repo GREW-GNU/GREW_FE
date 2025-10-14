@@ -24,7 +24,7 @@ abstract final class AppRoutes {
 
 final goRoutesProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: AppRoutes.splash,
+    initialLocation: AppRoutes.home,
     routes: [
       GoRoute(
         path: AppRoutes.splash,

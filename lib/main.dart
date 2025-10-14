@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grew/core/router/app_router.dart';
 
-void main() {
+void main() async {
+  // 바인딩 초기화
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  // FlutterNativeSplash 띄우기
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await onSystemInit();
   runApp(const ProviderScope(child: App()));
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    // FlutterNativeSplash 제거
+    FlutterNativeSplash.remove();
+  });
 }
 
 class App extends ConsumerWidget {
@@ -16,5 +30,14 @@ class App extends ConsumerWidget {
       routerConfig: router,
       debugShowCheckedModeBanner: false,
     );
+  }
+}
+
+Future<void> onSystemInit() async {
+  try {
+    // 환경 변수 로딩
+    await dotenv.load(fileName: "core/assets/config/.env");
+  } catch (e, st) {
+    debugPrint("Init Failed: $e\n$st");
   }
 }

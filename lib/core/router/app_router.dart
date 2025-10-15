@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:grew/presentation/features/crew/views/grew_activity_detail_page.dart';
 import 'package:grew/presentation/features/crew/views/grew_activity_page.dart';
 import 'package:grew/presentation/features/crew/views/grew_info_page.dart';
-import 'package:grew/presentation/features/crew/views/grew_page.dart';
+import 'package:grew/presentation/features/crew/views/grew_list_page.dart';
 import 'package:grew/presentation/features/crew/views/grew_recruitment_page.dart';
 import 'package:grew/presentation/features/crew/views/home_page.dart';
 import 'package:grew/presentation/features/user/views/my_page.dart';
@@ -17,7 +17,7 @@ abstract final class AppRoutes {
   static const my = "/my";
 
   static const home = "/";
-  static const grew = "/grew";
+  static const grew = "/grewList";
   static const grewInfo = "/grewInfo";
   static const grewActivity = "/grewActivity";
   static const grewActivityDetail = "/grewActivityDetail";
@@ -50,8 +50,8 @@ final goRoutesProvider = Provider<GoRouter>((ref) {
       ), // Home
       GoRoute(
         path: AppRoutes.grew,
-        name: "grew",
-        builder: (ctx, state) => const GrewPage(),
+        name: "grewList",
+        builder: (ctx, state) => const GrewListPage(),
       ), // Grew
       GoRoute(
         path: AppRoutes.grewInfo,

@@ -124,7 +124,8 @@ class _HomePageState extends State<HomePage> {
                         titleFontColor: AppColors.textBlack,
                         subTitleFontColor: AppColors.gray80,
                         onPressed: () {
-                          context.go(AppRoutes.grew);
+                          context.push(AppRoutes.grew);
+                          // context.go(AppRoutes.grew);
                         },
                       ),
                     ],

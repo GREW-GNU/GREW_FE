@@ -10,13 +10,18 @@ abstract final class AppStrings {
   static const unauthenticatedUserButton = "가입하기";
 
   // GREW List
+  // search
+  static const searcHint = "어떤 GREW를 찾으시나요?";
   // filter
   static const filterWishlist = "즐겨찾기";
   static const filterType = "유형";
 
   // sort (추가 필요)
-  static const sortLatestActivities = "최근 활동 순";
-  static const sortFirstName = "이름 순";
+  static const sortLatestActivities = "최근 활동순";
+  static const sortMostActivities = "활동 많은순";
+  static const sortFirstName = "이름순";
+  static const sortMostScrap = "스크랩순";
+  static const sortLatestOpen = "최근 생성순";
 
   // Recruitment Status
   static const requiring = "모집 중";

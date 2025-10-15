@@ -5,6 +5,7 @@ abstract final class AppColors {
   static const popupGray = Color(0xFF2B2A2F);
   static const boxGray = Color(0xFFF3F3F3);
 
+  static const textBlack = Color(0xFF121212);
   static const gray80 = Color(0xFF3F3F3F);
   static const gray60 = Color(0xFF676767);
   static const gray40 = Color(0xFFB5B5B5);

@@ -2,6 +2,7 @@ abstract final class AppStrings {
   static const title = "GREW";
 
   // HOME
+  static const welcomeText = "님 반갑습니다.";
   static const grewEntryPointTitle = "GREW 둘러보기";
   static const grewEntryPointSubTitle = "함께 하고싶은 GREW를 찾아봐요.";
 

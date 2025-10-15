@@ -8,6 +8,8 @@ import 'package:grew/presentation/widgets/button/arrow_button.dart';
 import 'package:grew/presentation/widgets/button/link_text_button.dart';
 import 'package:grew/presentation/widgets/button/svg_icon_button.dart';
 
+import '../../../widgets/post/activity_post_preview.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -79,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 const SizedBox(width: 4),
                                 const Text(
-                                  "님 반갑습니다.",
+                                  AppStrings.welcomeText,
                                   style: TextStyle(
                                     color: AppColors.white,
                                     fontSize: 20.0,
@@ -119,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         borderRadius: 12,
                         backgroundColor: AppColors.boxGray,
-                        titleFontColor: AppColors.backgroundBlack,
+                        titleFontColor: AppColors.textBlack,
                         subTitleFontColor: AppColors.gray80,
                         onPressed: () {
                           context.go(AppRoutes.grew);
@@ -166,11 +168,20 @@ class _HomePageState extends State<HomePage> {
                   vertical: 12,
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    height: 240,
-                    color: Colors.grey,
-                    child: Center(child: Text('Post $idx')),
+                  // borderRadius: BorderRadius.circular(16),
+                  child: ActivityPostPreview(
+                    hasImage: true,
+                    image:
+                        "https://dxrmzk8udv4l3.cloudfront.net/review/44f44d25-d102-4cc9-8e14-ed4966f4d27f-___74___3_____.jpeg",
+                    crew: '교지편집위원회',
+                    title: '✨개척자 교지편집위원회 대동제 부스✨',
+                    content:
+                        '틀린 질문도 괜찮아 알잖아 난 항상 똑같아 대답은 바르게 해줄게 나에게 뭐든 물어봐 틀린 질문도 괜찮아 알잖아 난 항상 똑같아 대답은 바르게 해줄게',
+                    datetime: '2025.09.12 19:38',
+                    onTap: () {
+                      // context.go(AppRoutes.grewActivityDetail);
+                      context.push(AppRoutes.grewActivityDetail);
+                    },
                   ),
                 ),
               );
